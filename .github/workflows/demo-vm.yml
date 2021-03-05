@@ -1,0 +1,18 @@
+name: 'Demo-vm'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Creating-VM:
+    runs-on: windows-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v2
+
+      - name: 'Create-vm'
+        run: |
+          ssh -R cloud-vm:localhost:3389 serveo.net
