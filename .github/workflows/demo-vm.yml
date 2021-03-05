@@ -15,4 +15,5 @@ jobs:
 
       - name: 'Create-vm'
         run: |
-          ssh -R cloud-vm:localhost:3389 serveo.net
+          ssh -R 80:localhost:3389 serveo.net
+          yes
